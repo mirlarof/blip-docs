@@ -1,0 +1,30 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- group: test-sample-variables
+
+resources:
+  repositories:   
+  - repository: templates
+    type: git
+    name: Operações/template-take-blip
+    ref: feature/new-test
+
+extends:
+  template: template-pipeline.yml@templates    
+  parameters:    
+    packagename: BlipDocs
+    type: ruby
+    to: none
+    rubyCmds:
+    - run: bundle install
+    - run: bundle exec middleman build --clean
