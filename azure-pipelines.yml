@@ -24,7 +24,7 @@ extends:
   parameters:    
     packagename: BlipDocs
     type: ruby
-    to: none
+    to: no-one
     rubyCmds:
     - run: bundle install
     - run: bundle exec middleman build --clean
