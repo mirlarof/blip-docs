@@ -25,7 +25,6 @@ extends:
     packagename: BlipDocs
     type: ruby
     to: no-one
-    multiTests: ''
     rubyCmds:
     - bundle install
     - bundle exec middleman build --clean
