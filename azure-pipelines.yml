@@ -27,5 +27,5 @@ extends:
     to: no-one
     multiTests: ''
     rubyCmds:
-    - run: bundle install
-    - run: bundle exec middleman build --clean
+    - bundle install
+    - bundle exec middleman build --clean
